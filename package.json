@@ -1,0 +1,24 @@
+{
+  "name": "hackdavis2020",
+  "version": "1.0.0",
+  "description": "hackathon project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"npm run lite",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huyenpham2995/HackDavis2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huyenpham2995/HackDavis2020/issues"
+  },
+  "homepage": "https://github.com/huyenpham2995/HackDavis2020#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
