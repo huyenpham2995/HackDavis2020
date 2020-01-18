@@ -1,24 +1,21 @@
 {
-  "name": "hackdavis2020",
-  "version": "1.0.0",
-  "description": "hackathon project",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"npm run lite",
-    "lite": "lite-server"
+    "dev": "webpack --mode development",
+    "start": "webpack --mode development --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/huyenpham2995/HackDavis2020.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/huyenpham2995/HackDavis2020/issues"
-  },
-  "homepage": "https://github.com/huyenpham2995/HackDavis2020#readme",
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   }
 }
