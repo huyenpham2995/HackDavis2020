@@ -1,11 +1,13 @@
 from flask import render_template, request, make_response, jsonify
 from schedulebuddy import app
 from schedulebuddy.forms import RegistrationForm, LoginForm
-from schedulebuddy.models import Course, Offered
-from schedulebuddy.database import getQuarters
+from schedulebuddy.models import Course
+
+from schedulebuddy.database import TestFun
 
 @app.route('/')
 def hello_world():
+    TestFun()
     return 'Welcome to Schedule Fighter <3!!!'
 
 @app.route('/register')

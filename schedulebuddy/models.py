@@ -11,7 +11,7 @@ class Course(db.Model):
 
 
     def __repr__(self):
-        return f"Course('{self.course_name}','{self.units}','{self.difficulty}','{self.offered}')"
+        return f"Course('{self.course_name}','{self.units}','{self.difficulty}','{self.offered}','{self.times_taken}','{self.prerequisites}')"
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
