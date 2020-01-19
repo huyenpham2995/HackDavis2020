@@ -33,5 +33,26 @@ def UpdateDifficulty(courses, difficulties):
         IncrementTimesTaken(course) 
     return new_diff
 
+def common_member(a, b): 
+    a_set = set(a) 
+    b_set = set(b) 
+    if (a_set & b_set): 
+        return True 
+    else: 
+        return False
+
+def GetValidRegList(user):
+    past_courses = User.query.filter(User.id == user)[0].past_courses
+    valid_reg_list = []
+
+    for course in Course.query.all():
+        prereks = course.prerequisites
+        
+        course_taken= []
+        for i in range(0,len(prereks)):
+            course_taked.append(common_member(prereks[i], past_courses))
+        if all(course_taken):
+            valid_reg_list.append(course)
+            
 def GetQuartersOffered(course):
     print("$$$$$$$: ", Course.query.filter(Course.course_name == course)[0].offered)

@@ -19,7 +19,7 @@ def TestFun():
         prerequisites=[["NAN"]])
     h.SetCourse(course_name="ECS36C", units=4, difficulty=6, offered = [3],\
         prerequisites=[["NAN"]])
-    h.SetUser(first_name="bob", last_name="tom", graduation=2020, school="UC Davis", past_courses=[1,2])
+    h.SetUser(first_name="bob", last_name="tom", graduation=2020, school="UC Davis", past_courses=["ECS50","ECS36C"])
     print("course offered: ",Course.query.filter(Course.course_name == "ECS140")[0].offered)
     h.GetQuartersOffered("ECS140")
     UpdateDiffTest([1,2], [10,10])
