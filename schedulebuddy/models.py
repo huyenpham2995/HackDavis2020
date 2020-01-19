@@ -1,5 +1,6 @@
 from schedulebuddy import db
 from sqlalchemy.types import PickleType
+
 class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     course_name = db.Column(db.String(20), unique=True, nullable=False)

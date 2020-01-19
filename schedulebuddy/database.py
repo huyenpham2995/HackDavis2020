@@ -4,7 +4,7 @@ import schedulebuddy.helpers as h
 db.drop_all()
 db.create_all()
 
-# 0,1,2,3,4 = Fall, Winter, Spering, Summer1, Summer2
+# 0,1,2,3,4 = Fall, Winter, Spring, Summer1, Summer2
 
 def TestFun():
     h.SetCourse(course_name="ECS150", units=4, difficulty=10, offered = [1,2,3], \
@@ -29,7 +29,6 @@ def TestFun():
     x = [[1,2,3],[1,2,3,4,5,6],[1]]
     print(len(x[1]))
 
-
 def UpdateDiffTest(courses, difficulties):
     new_diff = h.UpdateDifficulty(courses, difficulties)
     print(new_diff)
@@ -38,7 +37,3 @@ def UpdateDiffTest(courses, difficulties):
         print("UpdateDiffTest Pass")
     else:
         print("UpdateDiffTest Fail")
-
-
-
-
