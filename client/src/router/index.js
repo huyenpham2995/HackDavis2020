@@ -1,14 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Homepage from '../views/Homepage.vue'
 import Home from '../views/Home.vue'
+import AddQuarter from '../views/AddQuarter.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    name: 'homepage',
+    component: Homepage
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/add-quarter',
+    name: 'AddQuarter',
+    component: AddQuarter
   },
   {
     path: '/about',
