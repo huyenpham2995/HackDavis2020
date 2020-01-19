@@ -2,12 +2,8 @@ from flask import render_template, request, make_response, jsonify
 from schedulebuddy import app
 from schedulebuddy.forms import RegistrationForm, LoginForm
 from schedulebuddy.models import Course
-<<<<<<< HEAD
-from schedulebuddy.helpers import getQuartersOffered
-=======
 
 from schedulebuddy.database import TestFun
->>>>>>> 7ea6030fa3aac86ba38ce4037ae330672ff56946
 
 @app.route('/')
 def hello_world():
