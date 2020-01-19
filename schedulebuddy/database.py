@@ -1,5 +1,5 @@
-from app import db
-from Modules import Course, Offered
+from schedulebuddy import db
+from schedulebuddy.models import Course, Offered
 db.drop_all()
 db.create_all()
 
@@ -12,10 +12,10 @@ db.create_all()
 #                 offered = True
 #                 break
 
-    
+
 def GetDifficultySum(courses):
     _sum = 0
-    for course in courses:    
+    for course in courses:
         _sum += Course.query.filter(Course.id == course)[0].difficulty
     return _sum
 
@@ -36,9 +36,8 @@ SetCourse(course_name="ECS140", units=4, difficulty=6, offered = [1,2,4])
 SetCourse(course_name="ECS122A", units=4, difficulty=9, offered = [3])
 
 
-
-
-# for x in Offered.query.filter(Offered.course_id == Course.query.get(1).id):
-#     print(x.quarter)
-
-
+def getQuarters(course):
+    arr = []
+    for x in Offered.query.filter(Offered.course_id == Course.query.get(3).id):
+        arr.append(x.quarter)
+    return arr
