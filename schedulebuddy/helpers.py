@@ -43,16 +43,19 @@ def common_member(a, b):
 
 def GetValidRegList(user):
     past_courses = User.query.filter(User.id == user)[0].past_courses
+
+    # List of courses that oune can register for
     valid_reg_list = []
 
     for course in Course.query.all():
         prereks = course.prerequisites
         
-        course_taken= []
+        is_course_taken = []
         for i in range(0,len(prereks)):
-            course_taked.append(common_member(prereks[i], past_courses))
-        if all(course_taken):
+            is_course_taken.append(common_member(prereks[i], past_courses))
+        if all(is_course_taken):
             valid_reg_list.append(course)
+    return valid_reg_list
             
 def GetQuartersOffered(course):
     print("$$$$$$$: ", Course.query.filter(Course.course_name == course)[0].offered)
