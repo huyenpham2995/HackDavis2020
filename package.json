@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"npm run lite",
+    "start": "npm run lite",
     "lite": "lite-server"
   },
   "repository": {
@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/huyenpham2995/HackDavis2020#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "lite-server": "^2.5.4"
   }
 }
