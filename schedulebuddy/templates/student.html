@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Student</h1>
+
+    <div id="output">
+
+    </div>
+
+    <script>
+          function get_quarters_offered(){
+            var course = 'ECS140'
+            var msg = {
+              course: course
+            };
+
+            fetch('/get_quarters/',{
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(msg)
+            })
+            .then(function(response) {
+              if (response.status != 200) {
+                console.log('Response status was not 200: ${response.status}')
+                return OK;
+              }
+              response.json().then(function (data){
+                var quartersOffered = data.quarters
+                console.log("quarters offered: ", quartersOffered)
+                // var videoPlayer= document.getElementById('output');
+                // var scene = data.scene;
+                //
+                // console.log("the scene is", scene)
+                // var root_url = "{{url_for('static', filename='')}}"
+                // complete_url = root_url+scene+'.mp4'
+
+              })
+            })
+
+          }
+
+          get_quarters_offered()
+        </script>
+
+{% endblock %}
