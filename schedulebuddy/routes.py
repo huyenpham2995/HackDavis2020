@@ -4,10 +4,13 @@ from schedulebuddy.forms import RegistrationForm, LoginForm
 from schedulebuddy.models import Course
 
 from schedulebuddy.database import TestFun
+import schedulebuddy.helpers as h
 
 @app.route('/')
 def hello_world():
     TestFun()
+    print("AAAAAAAAAAAAAAAAAAAAAAA")
+    h.GetQuartersOffered("ECS140")
     return 'Welcome to Schedule Fighter <3!!!'
 
 @app.route('/register')

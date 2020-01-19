@@ -60,7 +60,9 @@ def GetValidRegList(user):
 def GetQuartersOffered(course):
     print("$$$$$$$: ", Course.query.filter(Course.course_name == course)[0].offered)
 
-# def GetCurrQuarterCourses(IQuarter):
-#     LCourseList = []
-#     for course in Course.query.all():
-#         if common_member([IQuarter], )
+def GetCurrQuarterCourses(IQuarter):
+    LCourseList = []
+    for course in Course.query.all():
+        if common_member([IQuarter], course.offered):
+            LCourseList.append(course)
+    return LCourseList
