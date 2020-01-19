@@ -14,10 +14,15 @@
     <p id="description"> A warrior that helps you build your schedule in 5 minutes!</p>
   </div>
 
-  <p>Join us!</p>
-  <button>Sign Up</button>
-  <p>Already have an account?</p>
-  <button> Login </button>
+  <div class="sign">
+    <p id="des">Join us!</p>
+    <button>Sign Up</button>
+    <button> Login </button>
+  </div>
+
+  <div class="bottom-container">
+    <p class="last-signature">© 2020 Schedule Fighter Team</p>
+  </div>
 </div>
 </template>
 
@@ -52,17 +57,40 @@ li a:hover {
   background-color: #111;
 }
 
+button {
+  align-self: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #002855;
+  color: #DAAA00;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  height: 40px;
+  width: 150px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
 .navbar {
   margin-bottom: 20px;
 }
 
 .logo {
   margin-top: 80px;
+  margin-bottom: 200px;
 }
 
 .header {
   font-size: 80px;
   margin-bottom: 50px;
+}
+
+.sign {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 50px;
 }
 
 #first {
@@ -75,6 +103,27 @@ li a:hover {
 }
 
 #description {
+  font-size: 20px;
+  font-weight: bold;
   margin-top: 20px;
+}
+
+#des {
+  font-size: 15px;
+  color: #002855;
+  margin-right: 10%;
+  margin-top: 20px;
+}
+
+.bottom-container {
+  background-color: #002855;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.last-signature {
+  color: #DAAA00;
+  padding: 10px 0;
+  font-size: 0.75rem;
 }
 </style>

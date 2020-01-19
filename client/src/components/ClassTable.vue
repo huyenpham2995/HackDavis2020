@@ -10,7 +10,7 @@
   </md-table>
 
   <p>Total Units: {{selected}}</p>
-  <label id="error" for="error" hidden=True> Error Label </label>
+  <label id="error" for="error"></label>
 
 </div>
 </template>
@@ -53,6 +53,14 @@ export default {
       var selected = 0
       for (var i = 0; i < items.length; i++) {
         selected = selected + items[i].units
+      }
+
+      var err = document.getElementById("error");
+      if (selected > 17) {
+        err.style.visibility = 'visible';
+        err.innerHTML = "You have over 17 units";
+      } else {
+        err.style.visibility = 'hidden';
       }
       this.selected = selected
 
