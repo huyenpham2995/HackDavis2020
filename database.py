@@ -3,13 +3,14 @@ from Modules import Course, Offered
 db.drop_all()
 db.create_all()
 
-def AllCoursesOffered(courses, current_quarter):
-    for course in courses:
-        offered = False
-        for x in Offered.query.filter(Offered.course_id == course):
-            if x.quarter == current_quarter:
-                offered = True
-                break
+# def AllCoursesOffered(courses, current_quarter):
+
+#     for course in courses:
+#         offered = False
+#         for x in Offered.query.filter(Offered.course_id == course):
+#             if x.quarter == current_quarter:
+#                 offered = True
+#                 break
 
     
 def GetDifficultySum(courses):
@@ -36,10 +37,8 @@ SetCourse(course_name="ECS122A", units=4, difficulty=9, offered = [3])
 
 
 
-print(Course.query.all())
 
-for x in Offered.query.filter(Offered.course_id == Course.query.get(1).id):
-    print(x.quarter)
+# for x in Offered.query.filter(Offered.course_id == Course.query.get(1).id):
+#     print(x.quarter)
 
 
-print(GetDifficultySum([1,2,4]))
