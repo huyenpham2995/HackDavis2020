@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
-    <Banner/>
-    <UserInfo/>
-    <div class="academicInfo">
-      <Term v-for="(term, index) in terms" v-bind:key="index" :termName="term" :termClass="classes[index]"/>
-      <Term :termName="newTerm" :termClass="[]"/>
-    </div>
+<div class="home">
+  <Banner />
+  <UserInfo />
+  <div class="academicInfo">
+    <Term v-for="(term, index) in terms" v-bind:key="index" :termName="term" :termClass="classes[index]" />
+    <Term :termName="newTerm" :termClass="[]" />
   </div>
+</div>
 </template>
 
 <script>
@@ -14,17 +14,18 @@ import Banner from './Banner.vue'
 import UserInfo from './UserInfo.vue'
 import Term from './Term.vue'
 
-export default {  
+export default {
   name: 'Home',
   components: {
     Banner,
     UserInfo,
     Term
   },
-  data () {
+  data() {
     return {
       terms: ['Fall 2018', 'Winter 2019', 'Spring 2019', 'Fall 2019', 'Winter 2020', 'Spring 2020', 'temp'],
-      classes: [['ECS 36C: Data Structures and Algorithms', 'MAT 108: Intro to Abstract Math', 'ECS 154A: Computer Architecture'],
+      classes: [
+        ['ECS 36C: Data Structures and Algorithms', 'MAT 108: Intro to Abstract Math', 'ECS 154A: Computer Architecture'],
         ['ECS 127: Cryptography', 'ECS 140A: Programming Languages', 'ECS 120: Theory of Computation', 'ECH 001: Design of Coffee'],
         ['ECS 150: Operating Systems', 'ECS 122A: Algorithms Design', 'MUS 116: Music of The Beatles'],
         ['ECS 189E: iOS App Development', 'ECS 132: Probability and Statistics', 'ECS 175: Computer Graphics'],
@@ -53,6 +54,7 @@ export default {
   border: dotted rgb(104, 103, 99) 5px;
   justify-items: center;
 }
+
 /* .academicInfo:active {
   overflow-y: visible;
 } */
@@ -69,7 +71,7 @@ export default {
 }
 
 ::-webkit-scrollbar-thumb {
-  background:#B3A369;
+  background: #B3A369;
   border-radius: 7px;
   width: 25px;
 }
@@ -77,14 +79,17 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }

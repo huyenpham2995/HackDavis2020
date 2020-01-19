@@ -1,16 +1,19 @@
 <template>
-  <div id="app">
-    <Home/>
-  </div>
+<div id="app">
+  <!--<Home />-->
+  <AddQuarter />
+</div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
+//import Home from './components/Home.vue'
+import AddQuarter from './components/AddQuarter.vue'
 
 export default {
   name: 'app',
   components: {
-    Home
+    //Home
+    AddQuarter
   }
 }
 </script>
