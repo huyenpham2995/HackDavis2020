@@ -4,12 +4,14 @@ class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     course_name = db.Column(db.String(20), unique=True, nullable=False)
     units = db.Column(db.Integer, nullable=False)
-    # offered = db.relationship('Offered', backref='author', lazy=True)
     offered = db.Column(PickleType, nullable=False)
     difficulty = db.Column(db.Integer, unique=False, nullable=False)
+    times_taken = db.Column(db.Integer, nullable=False)
+    prerequisites = db.Column(PickleType, nullable=False)
+
 
     def __repr__(self):
-        return f"Course('course_name: {self.course_name}','units: {self.units}','difficulty: {self.difficulty}','offered:{self.offered}')"
+        return f"Course('{self.course_name}','{self.units}','{self.difficulty}','{self.offered}')"
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
