@@ -1,8 +1,8 @@
 from flask import render_template, request, make_response, jsonify
 from schedulebuddy import app
 from schedulebuddy.forms import RegistrationForm, LoginForm
-from schedulebuddy.models import Course, Offered
-from schedulebuddy.database import getQuarters
+from schedulebuddy.models import Course
+from schedulebuddy.helpers import getQuartersOffered
 
 @app.route('/')
 def hello_world():
@@ -27,7 +27,7 @@ def quarters():
         course = message['course']
         print(course)
 
-        quarters = getQuarters(course)
-
+        quarters = getQuartersOffered(course)
+        print(quarters)
         res = make_response(jsonify({"quarters": quarters}), 200)
         return res

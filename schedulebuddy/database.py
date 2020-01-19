@@ -5,7 +5,7 @@ import helpers as h
 db.drop_all()
 db.create_all()
 
-# 0,1,2,3,4 = Fall, Winter, Spering, Summer1, Summer2
+# 0,1,2,3,4 = Fall, Winter, Spring, Summer1, Summer2
 
 h.SetCourse(course_name="ECS150", units=4, difficulty=10, offered = [1,2,3])
 h.SetCourse(course_name="ECS171", units=4, difficulty=7, offered = [1,2,3])
@@ -17,12 +17,6 @@ h.SetUser(first_name="bob", last_name="tom", graduation=2020, school="UC Davis",
 #print(Course.query.get(1).offered)
 # for x in Offered.query.filter(Offered.course_id == Course.query.get(1).id):
 #     print(x.quarter)
-
-def getQuarters(course):
-    arr = []
-    for x in Offered.query.filter(Offered.course_id == Course.query.get(3).id):
-        arr.append(x.quarter)
-    return arr
 
 def UpdateDiffTest(courses, difficulties):
     new_diff = h.UpdateDifficulty(courses, difficulties)

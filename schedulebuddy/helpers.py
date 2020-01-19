@@ -1,9 +1,9 @@
-from app import db
-from Modules import Course, User
+from schedulebuddy import db
+from schedulebuddy.models import Course, User
 
 def GetDifficultySum(courses):
     _sum = 0
-    for course in courses:    
+    for course in courses:
         _sum += Course.query.filter(Course.id == course)[0].difficulty
     return _sum
 
@@ -20,7 +20,7 @@ def SetUser(first_name, last_name, graduation, school, past_courses):
 
 def InclTimesTaken(course_id):
     Course.query.filter(Course.id == course_id)[0].times_taken += 1
-    print("times talen = ", Course.query.filter(Course.id == course_id)[0].times_taken)
+    print("times taken = ", Course.query.filter(Course.id == course_id)[0].times_taken)
 
 def UpdateDifficulty(courses, difficulties):
     new_diff = []
@@ -30,9 +30,15 @@ def UpdateDifficulty(courses, difficulties):
         # print("for: ",new_diff)
         old_diff = Course.query.filter(Course.id == course)[0].difficulty
         n = Course.query.filter(Course.id == course)[0].times_taken
-        
+
         Course.query.filter(Course.id == course)[0].difficulty = ((n * old_diff) + difficulty) / (n + 1)
         new_diff.append(Course.query.filter(Course.id == course)[0].difficulty)
-        InclTimesTaken(course) 
+        InclTimesTaken(course)
         # print("new Diff: ", new_diff)
     return new_diff
+
+def getQuartersOffered(course):
+    if Course.query.filter(Course.course_name == course) != None:
+        # return Course.query.filter(Course.course_name == course)[0].offered
+        return "Yes"
+    return "No course match"
