@@ -54,6 +54,10 @@ export default {
   text-align: left;
 }
 
+h1 {
+  margin-top: 50px;
+}
+
 label {
   display: inline-block;
   margin-right: 20px;
